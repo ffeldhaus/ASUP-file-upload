@@ -1,20 +1,126 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="container">
+  <header class="navbar navbar-fixed-top">
+    <div class="hd_inner">
+      <div id="headerBlock">
+        <div id="topLogoBox"><a href="http://now.netapp.com"><img src="assets/logo-home-66x76.gif" width="66" height="76" border="0"></a></div>
+        <div id="headerBlockMiddle">
+          <div class="menu">
+            <ul>
+              <li><a class="hide" href="http://www.netapp.com">NetApp Sites</a>
+                <!--[if lte IE 6]>
+                                          <a href="http://www.netapp.com">NetApp Sites
+                                          <table><tr><td>
+                                      <![endif]-->
+                <ul>
+                  <li><a href="http://www.netapp.com">NetApp.com</a></li>
+                  <li><a href="https://fieldportal.netapp.com">Field Portal</a></li>
+                </ul>
+                <!--[if lte IE 6]>
+                                          </td></tr></table>
+                                          </a>
+                                      <![endif]-->
+              </li>
+              <li><a class="hide" href="http://www.netapp.com/us/library/">Library</a>
+                <!--[if lte IE 6]>
+                                          <a href="http://www.netapp.com/us/library/">Library
+                                          <table><tr><td>
+                                      <![endif]-->
+                <ul>
+                  <li><a href="http://www.netapp.com/us/library/analyst-reports.html">Analyst Reports</a></li>
+                  <li><a href="http://www.netapp.com/us/library/customer-stories.html">Customer Stories</a></li>
+                  <li><a href="http://www.netapp.com/us/library/research-papers.html">Research Papers</a></li>
+                  <li><a href="http://www.netapp.com/us/library/technical-reports.html">Technical Reports</a></li>
+                  <li><a href="http://www.netapp.com/us/library/white-papers.html">White Papers</a></li>
+                </ul>
+                <!--[if lte IE 6]>
+                                          </td></tr></table>
+                                          </a>
+                                      <![endif]-->
+              </li>
+              <li><a class="hide" href="http://www.netapp.com/us/communities/">Communities</a>
+                <!--[if lte IE 6]>
+                                          <a href="http://www.netapp.com/us/communities/">Communities
+                                          <table><tr><td>
+                                      <![endif]-->
+                <ul>
+                  <li><a href="http://blogs.netapp.com/dave/">Dave's Blog</a></li>
+                  <li><a href="http://www.netapp.com/us/communities/communities-blogs.html">Explore Our Blogs</a></li>
+                  <li><a href="http://communities.netapp.com">Community Forums</a></li>
+                  <li><a href="http://www.netapp.com/us/communities/tech-ontap">Tech OnTap</a></li>
+                  <li><a href="http://www.netapp.com/us/communities/subscriptions.html">Subscriptions</a></li>
+                  <li><a href="https://forums.netapp.com/">Support Community</a></li>
+                </ul>
+                <!--[if lte IE 6]>
+                                            </td></tr></table>
+                                            </a>
+                                        <![endif]-->
+              </li>
+              <li><a class="hide" href="http://www.netapp.com/us/contact-us/">Contact Us</a>
+                <!--[if lte IE 6]>
+                                          <a href="http://www.netapp.com/us/contact-us/">Contact Us
+                                          <table><tr><td>
+                                      <![endif]-->
+                <ul class="lastLink">
+                  <li><a href="http://www.netapp.com/us/contact-us/">Main</a></li>
+                  <li><a href="http://www.netapp.com/us/how-to-buy/">Sales</a></li>
+                  <li><a href="http://www.netapp.com/us/support/ngs-contacts.html">Support</a></li>
+                  <li><a href="https://now.netapp.com/eservice/assistant">Feedback</a></li>
+                </ul>
+                <!--[if lte IE 6]>
+                                          </td></tr></table>
+                                          </a>
+                                      <![endif]-->
+              </li>
+            </ul>
+          </div>
+          <div id="headerBanner"><h1>Support</h1></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="row">
+    <div class="col-8">
+      <h1>NetApp File Upload Utility</h1>
+      <br>NetApp takes data security seriously. <a target="_blank" href="https://support.netapp.com/info/web/ECMP1138936.html">Learn More</a> about our data security policies.
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="caseNumber" placeholder="Case Number" autocomplete="off" spellcheck="false" maxlength="10"/>
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary">Validate</button>
+        </div>
+        <small id="emailHelp" class="form-text text-muted">In order to associate your file with your case, please enter the 10 digit case number and press 'Validate'. Validation can take a few seconds.</small>
+      </div>
+      <div class="input-group mb-3">
+        <div class="custom-file">
+          <input  type="file" class="custom-file-input" id="validatedCustomFile" (change)="handleFileInput($event.target.files)" required>
+          <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+        </div>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" (click)="uploadFileToActivity()">Upload</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="instructions">
+        <h3>File Upload Instructions</h3>
+        <ul class="instructions_list">
+          <li class="no_bullet"><strong>Note: </strong>As soon as a core file starts an upload, it is checked for known issues. If there is a match, the core file transfer will be stopped. If NetApp support personnel still request this core file, you must check the "Override core file validation" checkbox - they will provide the override password to proceed with the core upload.</li>
+          <li class="no_bullet">For more information, see Knowledgebase article <a href="https://kb.netapp.com/support/index?page=content&amp;id=1010090" target="_blank">1010090</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div id="footerMenu">
+      <ul>
+        <li class="tagLineImg"><img src="assets/tagline-footer.jpg" width="99" height="11"></li>
+        <li><a href="http://www.netapp.com/us/site/copyright.html">&copy; 2012 NetApp</a> <span>&nbsp;</span></li>
+        <li><a href="http://www.netapp.com/us/support/ngs-contacts.html">Contact Support</a> <span>&nbsp;</span></li>
+        <li><a href="http://www.netapp.com/us/site/privacy.html">Privacy Policy</a> <span>&nbsp;</span></li>
+        <li><a href="https://now.netapp.com/NOW/main/sitemap/sitemap.shtml">Sitemap</a> <span>&nbsp;</span></li>
+        <li><a href="https://now.netapp.com/eservice/assistant">Feedback</a> <span>&nbsp;</span></li>
+        <li><a href="http://www.netapp.com/us/communities/subscriptions.html">Subscriptions&nbsp;(RSS)</a><span>&nbsp;</span></li>
+        <li><a href="http://www.netapp.com/us/communities/rss-subscriptions.html"><img src="assets/icon-rss-bgfff-16x16.gif" border="0" align="absmiddle"></a></li>
+      </ul>
+    </div>
+  </footer>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
