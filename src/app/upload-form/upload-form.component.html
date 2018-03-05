@@ -1,0 +1,29 @@
+<div class="col-8">
+  <h1>NetApp File Upload Utility</h1>
+  <br>NetApp takes data security seriously. <a target="_blank" href="https://support.netapp.com/info/web/ECMP1138936.html">Learn More</a> about our data security policies.
+  <small id="emailHelp" class="form-text text-muted">In order to associate your file with your case, please enter the 10 digit case number and press 'Validate'. Validation can take a few seconds.</small>
+  <div class="input-group mb-3">
+    <input appNumberInput required type="text" class="form-control" id="caseNumber" placeholder="Case Number" autocomplete="off" spellcheck="false" minlength="10" maxlength="10" name="caseNumber" [(ngModel)]="upload.caseNumber" #caseNumber="ngModel"/>
+    <div class="input-group-append">
+      <button (click)="validate()" [disabled]="caseNumber.invalid" type="button" class="btn btn-outline-primary">Validate</button>
+    </div>
+  </div>
+  <div class="input-group mb-3">
+    <div class="custom-file">
+      <input [disabled]="!upload.caseNumberValid" type="file" class="custom-file-input" id="validatedCustomFile" (change)="handleFileInput($event.target.files)" required placeholder="Choose file...">
+      <label class="custom-file-label" for="validatedCustomFile"><div [hidden]="!upload.caseNumberValid || upload.file.name.length > 0">Choose File</div><div [hidden]="upload.file.name.length == 0">{{upload.file.name}}</div></label>
+    </div>
+    <div class="input-group-append">
+      <button [disabled]="upload.file.name.length == 0" class="btn btn-outline-primary" (click)="uploadFile()">Upload</button>
+    </div>
+  </div>
+  <div *ngIf="upload.message.text && upload.message.type == 'info'" class="alert alert-info">
+    {{upload.message.text}}
+  </div>
+  <div *ngIf="upload.message.text && upload.message.type == 'warning'" class="alert alert-warning">
+    {{upload.message.text}}
+  </div>
+  <div *ngIf="upload.message.text && upload.message.type == 'danger'" class="alert alert-danger">
+    {{upload.message.text}}
+  </div>
+</div>

@@ -1,4 +1,10 @@
-# ASUPFileUpload
+# ASUP File Upload
+
+This app allows a user to upload a file to an S3 bucket.
+
+A demo can be found here: https://webscaledemo.netapp.com/asup-file-upload-app/index.html
+
+The results can be listed here: https://webscaledemo.netapp.com/asup-file-upload
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
 
@@ -12,7 +18,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build --base-href /asup-file-upload-app/` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+## Upload
+
+Setup S3 credentials for profile webscaledemo. Then run `aws s3 sync --endpoint-url https://webscaledemo.netapp.com --profile webscaledemo ./dist s3://asup-file-upload-app`
 
 ## Running unit tests
 

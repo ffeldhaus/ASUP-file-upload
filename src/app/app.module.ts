@@ -6,12 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { AppService } from './app.service';
-
+import { UploadFormComponent } from './upload-form/upload-form.component';
+import { NumberInputDirective } from './number-input.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UploadFormComponent,
+    NumberInputDirective
   ],
   imports: [
     BrowserModule,
@@ -19,7 +21,6 @@ import { AppService } from './app.service';
     FormsModule,
     NgbModule.forRoot()
   ],
-  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
