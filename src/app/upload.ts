@@ -7,6 +7,7 @@ export class Upload {
     public caseNumber: string,
     public caseNumberValid: boolean,
     public file: File,
+    public endpoint: string = '',
     public message: Message = new Message()
   ) {  }
 }

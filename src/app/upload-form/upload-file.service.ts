@@ -24,13 +24,13 @@ export class UploadFileService {
   putFile(upload: Upload): Observable<Message> {
     if (!upload.file) { return; }
 
-    const endpoint = 'https://webscaledemo.netapp.com/asup-file-upload/' + upload.caseNumber + '-' + upload.file.name;
-    const putRequest = new HttpRequest('PUT', endpoint, upload.file, {reportProgress: true});
+    upload.endpoint = 'https://webscaledemo.netapp.com/asup-file-upload/' + upload.caseNumber + '-' + upload.file.name;
+    const putRequest = new HttpRequest('PUT', upload.endpoint, upload.file, {reportProgress: true});
 
     return this.http
       .request(putRequest)
       .pipe(
-        map(event => this.getEventMessage(event, upload.file)),
+        map(event => this.getEventMessage(event, upload)),
         tap(message => this.showProgress(message, upload)),
         last(), // return last (completed) message to caller
         catchError(this.handleError(upload.file))
@@ -38,21 +38,21 @@ export class UploadFileService {
   }
 
   /** Return distinct message for sent, upload progress, & response events */
-  private getEventMessage(event: HttpEvent<any>, file: File) {
+  private getEventMessage(event: HttpEvent<any>, upload: Upload) {
     switch (event.type) {
       case HttpEventType.Sent:
-        return new Message(`Uploading file "${file.name}" of size ${file.size}.`, 'info');
+        return new Message(`Uploading file "${upload.file.name}" of size ${upload.file.size} to ${upload.endpoint}.`, 'info');
 
       case HttpEventType.UploadProgress:
         // Compute and show the % done:
         const percentDone = Math.round(100 * event.loaded / event.total);
-        return new Message(`File "${file.name}" upload status: "${event.loaded}"/"${event.total}" (${percentDone}%) uploaded.`, 'info');
+        return new Message(`File "${upload.file.name}" upload status: "${event.loaded}"/"${event.total}" (${percentDone}%) uploaded.`, 'info');
 
       case HttpEventType.Response:
-        return new Message(`File "${file.name}" was completely uploaded!`, 'info');
+        return new Message(`File "${upload.file.name}" was completely uploaded to ${upload.endpoint}!`, 'info');
 
       default:
-        return new Message(`File "${file.name}" surprising upload event: ${event.type}.`, 'info');
+        return new Message(`File "${upload.file.name}" surprising upload event: ${event.type}.`, 'info');
     }
   }
 
