@@ -4,9 +4,9 @@ export class Upload {
 
 
   constructor(
-    public caseNumber: string,
-    public caseNumberValid: boolean,
-    public file: File,
+    public caseNumber: string = '',
+    public caseNumberValid: boolean = false,
+    public file: File = new File([''], ''),
     public endpoint: string = '',
     public message: Message = new Message()
   ) {  }

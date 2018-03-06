@@ -46,10 +46,10 @@ export class UploadFileService {
       case HttpEventType.UploadProgress:
         // Compute and show the % done:
         const percentDone = Math.round(100 * event.loaded / event.total);
-        return new Message(`File "${upload.file.name}" upload status: "${event.loaded}"/"${event.total}" (${percentDone}%) uploaded.`, 'info');
+        return new Message(`Uploaded ${event.loaded} Bytes of ${event.total} Bytes (${percentDone}%)`, 'info', percentDone);
 
       case HttpEventType.Response:
-        return new Message(`File "${upload.file.name}" was completely uploaded to ${upload.endpoint}!`, 'info');
+        return new Message(`File "${upload.file.name}" was completely uploaded to ${upload.endpoint}`, 'info', 100);
 
       default:
         return new Message(`File "${upload.file.name}" surprising upload event: ${event.type}.`, 'info');

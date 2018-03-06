@@ -24,5 +24,4 @@ export class NumberInputDirective {
       event.preventDefault();
     }
   }
-
 }

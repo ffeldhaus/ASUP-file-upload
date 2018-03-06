@@ -13,7 +13,7 @@ export class UploadFormComponent implements OnInit {
 
   validCaseNumberRegex = /^200[0-9]{7}$/g;
 
-  upload = new Upload('', false, new File([''], ''));
+  upload = new Upload();
 
   constructor(private uploadFileService: UploadFileService) { }
 
@@ -21,14 +21,13 @@ export class UploadFormComponent implements OnInit {
   }
 
   validate() {
-    this.upload.caseNumberValid = this.validCaseNumberRegex.test(this.upload.caseNumber);
-    if (!this.upload.caseNumberValid) {
+    if (this.validCaseNumberRegex.test(this.upload.caseNumber)) {
+      this.upload = new Upload(this.upload.caseNumber, true);
+      this.upload.message = new Message('Case number valid. Proceed with choosing file', 'info');
+    } else {
       this.upload.message = new Message('Case number invalid. Case number must start with 200', 'warning');
+      this.upload.caseNumberValid = false;
     }
-    else {
-      this.upload.message = new Message();
-    }
-    console.log('Case validation is ' + this.upload.caseNumberValid);
   }
 
   handleFileInput(files: FileList) {
