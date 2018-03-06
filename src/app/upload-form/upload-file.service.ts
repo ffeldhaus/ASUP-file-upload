@@ -24,7 +24,7 @@ export class UploadFileService {
   putFile(upload: Upload): Observable<Message> {
     if (!upload.file) { return; }
 
-    upload.endpoint = 'https://webscaledemo.netapp.com/asup-file-upload/' + upload.caseNumber + '-' + upload.file.name;
+    upload.endpoint = 'https://webscaledemo.netapp.com/asup-file-upload/' + upload.caseNumber + '/' + upload.file.name;
     const putRequest = new HttpRequest('PUT', upload.endpoint, upload.file, {reportProgress: true});
 
     return this.http
